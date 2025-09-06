@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mihir Milind Ughade - Data Scientist | Business Intelligence | Data Analyst Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f97316; /* Orange */
+            --light-bg: #f8fafc;
+            --dark-text: #0f172a;
+            --light-text: #f1f5f9;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar-brand, .nav-link, .btn {
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text);
+            padding: 150px 0 100px 0; /* Increased top padding */
+            margin-top: 56px; /* Account for fixed navbar */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero .lead {
+            font-size: 1.5rem;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn-custom {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 30px; /* Rounded buttons */
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-custom:hover {
+            background-color: #ea580c;
+            border-color: #ea580c;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-outline-custom {
+            border-color: white;
+            color: white;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 30px;
+            transition: all var(--transition-speed) ease;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Section Padding & Titles */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            font-weight: 900;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .profile-img-container {
+            flex: 0 0 auto;
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 5px solid white;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the container */
+            transition: transform 0.5s ease;
+        }
+
+         .profile-img-container:hover .profile-img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .experience-item {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .experience-item h5 {
+            color: var(--accent-color);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Skills Icons */
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+
+        .skill-item:hover .skill-icon {
+            color: var(--accent-color);
+            transform: scale(1.2);
+        }
+
+        /* Project Cards */
+        .project-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all var(--transition-speed) ease;
+            height: 100%;
+            background: #fff;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Specific Project Colors */
+        .project-1 { border-top: 4px solid #3b82f6; } /* Blue */
+        .project-2 { border-top: 4px solid #10b981; } /* Green */
+        .project-3 { border-top: 4px solid #8b5cf6; } /* Purple */
+        .project-4 { border-top: 4px solid #ec4899; } /* Pink */
+        .project-5 { border-top: 4px solid #f59e0b; } /* Amber */
+        .project-6 { border-top: 4px solid #ef4444; } /* Red */
+        .project-7 { border-top: 4px solid #06b6d4; } /* Cyan */
+        .project-8 { border-top: 4px solid #84cc16; } /* Lime */
+
+        /* Contact Section */
+        #contact {
+            background-color: #e2e8f0; /* Light background for contrast */
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .social-icon {
+            font-size: 1.8rem;
+            color: var(--dark-text);
+            margin: 0 15px;
+            transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+
+        .social-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: var(--light-text);
+            padding: 30px 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-img-container {
+                margin: 0 auto 30px auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 0 80px 0;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero .lead {
+                font-size: 1.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+             .btn-custom, .btn-outline-custom {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="70">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">MIHIR MILIND UGHADE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 fw-bold mb-3" data-aos="fade-down" data-aos-duration="1000">MIHIR MILIND UGHADE</h1>
+                    <h2 class="lead mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Data Scientist | Business Intelligence | Data Analyst</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Transforming Complex Data into Strategic Insights for Innovation & Growth</p>
+                    <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                        <a href="#projects" class="btn btn-custom btn-lg me-3">Explore My Work</a>
+                        <a href="Mihir_Ughade_CV_New_02 (1).pdf" target="_blank" class="btn btn-outline-custom btn-lg">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">About Me</h2>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="profile-img-container">
+                         <img src="profile.jpg" alt="Mihir Milind Ughade" class="profile-img">
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="about-text">
+                        <h3 class="mb-4">My Journey in Data</h3>
+                        <p class="mb-4">I'm a results-driven Data Professional skilled in SQL, Excel, Power BI, Tableau, and Google Looker, with a strong track record of converting complex data into actionable insights. My expertise spans data analysis, predictive modeling, and process optimization, consistently supporting strategic business decisions.</p>
+                        <p class="mb-4">Proficient in Agile project management using Jira, I focus on driving efficiency and maximizing business impact. My passion lies in uncovering hidden patterns within data to empower organizations to make informed, strategic choices and gain a competitive edge.</p>
+
+                        <h4 class="mt-5 mb-4">Experience & Education</h4>
+
+                        <div class="experience-item">
+                            <h5>Market Research Intern, Earth5R</h5>
+                            <p class="text-muted mb-2"><strong>Aug 2025 – Present</strong></p>
+                            <ul>
+                                <li>Designed digital marketing campaigns, improving online engagement by 35% through analytics-driven SEO and content optimization.</li>
+                                <li>Conducted market research and competitor analysis to identify high-value opportunities for organizational growth strategy.</li>
+                                <li>Analyzed multi-platform social media performance, refining content strategy and boosting interaction rates by 25%.</li>
+                            </ul>
+                        </div>
+
+                         <div class="experience-item">
+                            <h5>Extensive Virtual Internships</h5>
+                            <p class="text-muted">Gained hands-on experience with industry leaders including Goldman Sachs, Deloitte, PwC, AWS, Tata, and Bank of America, mastering skills in risk assessment, data analytics, solutions architecture, and sales & trading simulations.</p>
+                             <p class="text-muted mt-2"><strong>Education:</strong> MBA (Pursuing) - Manipal University Jaipur (2025-2027) | BSc - K.V. Pendharkar College, University of Mumbai (2021-2023, CGPA: 8.21)</p>
+                             <p class="text-muted"><strong>Relevant Coursework:</strong> Masters in Data Science and Analytics with AI – IT Vedant Education Pvt. Ltd (Jan 2025 - Present)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Projects</h2>
+                    <p class="text-muted">Showcasing impactful data solutions and analytical prowess.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="card project-card project-1 h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <h5 class="card-title">Predictive Supply Chain Analytics</h5>
+                            <p class="card-text"><strong>Python, ML</strong></p>
+                            <p class="card-text">Engineered a predictive ML pipeline for demand forecasting and inventory planning, boosting forecast accuracy by 18%. Reduced stockouts by 12% and optimized supplier performance.</p>
+                            <a href="https://github.com/mihir0804/Predictive_Supply_Chain_Analytics" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card project-card project-2 h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon">
+                                <i class="bi bi-person-x"></i>
+                            </div>
+                            <h5 class="card-title">Customer Churn Prediction</h5>
+                            <p class="card-text"><strong>Python, SQL, ML</strong></p>
+                            <p class="card-text">Deployed models (AUC 0.87) to predict churn. Used SQL for preprocessing. Enabled targeted retention strategies that improved customer loyalty by 10%.</p>
+                            <a href="https://github.com/mihir0804/Customer_Churn_Prediction_ML" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card project-card project-3 h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon">
+                                <i class="bi bi-database"></i>
+                            </div>
+                            <h5 class="card-title">Vision Heaven – SQL Project</h5>
+                            <p class="card-text"><strong>SQL</strong></p>
+                            <p class="card-text">Developed schema and optimized queries by 25%. Generated dashboards for customer behavior analysis and revenue forecasting.</p>
+                            <a href="https://github.com/mihir0804/Vision_Heaven_SQL_Project" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="card project-card project-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon">
+                                <i class="bi bi-currency-dollar"></i>
+                            </div>
+                            <h5 class="card-title">Automated Payroll Management System</h5>
+                            <p class="card-text"><strong>SQL</strong></p>
+                            <p class="card-text">Built a MySQL system, automating processing. Reduced errors by 90% and accelerated cycle time by 30%.</p>
+                            <a href="https://github.com/mihir0804/Automated-Payroll-Management-System" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card project-card project-5 h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </div>
+                            <h5 class="card-title">AI-Powered Resume Screening</h5>
+                            <p class="card-text"><strong>NLP, ML</strong></p>
+                            <p class="card-text">Used Spacy and Sentence-BERT. Achieved 78% accuracy, reducing manual screening time by 40%.</p>
+                            <a href="https://github.com/mihir0804/AI_Resume_Screening_NLP" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card project-card project-6 h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon">
+                                <i class="bi bi-cpu"></i>
+                            </div>
+                            <h5 class="card-title">Self-Healing MLOps Pipeline</h5>
+                            <p class="card-text"><strong>MLOps</strong></p>
+                            <p class="card-text">Used Evidently AI, Airflow, MLflow, Kubernetes. Reduced model downtime by 35% and maintained accuracy.</p>
+                            <a href="https://github.com/mihir0804/Self_Healing_MlOps_Drift_Detection" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="card project-card project-7 h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon">
+                                <i class="bi bi-diagram-3"></i>
+                            </div>
+                            <h5 class="card-title">AI-Powered CI/CD Pipeline Optimizer</h5>
+                            <p class="card-text"><strong>DevOps, ML</strong></p>
+                            <p class="card-text">ML model predicted build failures at 82% accuracy. Cut failed deployments by 20%. Integrated Prometheus/Grafana for monitoring.</p>
+                            <a href="https://github.com/mihir0804/AI_DevOps_Pipeline_Optimize" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card project-card project-8 h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <h5 class="card-title">Flask CI/CD Pipeline</h5>
+                            <p class="card-text"><strong>Flask, DevOps</strong></p>
+                            <p class="card-text">Designed and deployed a Flask app. Reduced release cycle time by 50% through automated testing and containerized deployments.</p>
+                            <a href="https://github.com/mihir0804/Flask_CI-CD_Pipeline" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Skills</h2>
+                    <p class="text-muted">A comprehensive toolkit for data-driven success.</p>
+                </div>
+            </div>
+            <div class="row text-center g-4">
+
+                <div class="col-md-3 col-6 skill-item" data-aos="zoom-in">
+                    <div class="skill-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h5>Programming</h5>
+                    <p>Python</p>
+                </div>
+
+                <div class="col-md-3 col-6 skill-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="bi bi-server"></i>
+                    </div>
+                    <h5>Databases</h5>
+                    <p>MySQL, PostgreSQL</p>
+                </div>
+
+                <div class="col-md-3 col-6 skill-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="bi bi-bar-chart"></i>
+                    </div>
+                    <h5>Analytics & Viz</h5>
+                    <p>Power BI, Tableau, Looker, Excel</p>
+                </div>
+
+                <div class="col-md-3 col-6 skill-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="bi bi-tools"></i>
+                    </div>
+                    <h5>Data Handling</h5>
+                    <p>Cleaning, Transformation, Dashboarding</p>
+                </div>
+
+                <div class="col-md-3 col-6 skill-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="skill-icon">
+                        <i class="bi bi-robot"></i>
+                    </div>
+                    <h5>ML & AI Tools</h5>
+                    <p>Scikit-learn, TensorFlow, Spacy, BERT, MLflow, Evidently AI</p>
+                </div>
+
+                <div class="col-md-3 col-6 skill-item" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="skill-icon">
+                        <i class="bi bi-gear"></i>
+                    </div>
+                    <h5>MLOps & DevOps</h5>
+                    <p>Airflow, Kubernetes, Docker, Prometheus, Grafana, CI/CD</p>
+                </div>
+
+                <div class="col-md-3 col-6 skill-item" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="skill-icon">
+                        <i class="bi bi-git"></i>
+                    </div>
+                    <h5>Other Tools</h5>
+                    <p>Git/GitHub, Streamlit, Flask, Jira</p>
+                </div>
+
+                <div class="col-md-3 col-6 skill-item" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="skill-icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+                    <h5>Certifications</h5>
+                    <p>IBM ML, AWS, PwC, Tableau, Power BI, SQL, Excel, SEBI</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section-padding bg-light">
+         <div class="container text-center">
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <h2 class="section-title">Resume</h2>
+                    <p class="text-muted">Download my complete professional resume.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <a href="Mihir_Ughade_CV_New_02 (1).pdf" target="_blank" class="btn btn-lg btn-custom">
+                        <i class="bi bi-download me-2"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Contact</h2>
+                    <p class="text-muted">Let's connect and discuss opportunities!</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row text-center g-4">
+                        <div class="col-md-4">
+                            <div class="contact-item" data-aos="zoom-in" data-aos-duration="1000">
+                                <i class="bi bi-envelope contact-icon"></i>
+                                <h5>Email</h5>
+                                <p><a href="mailto:mihirughade0804@gmail.com">mihirughade0804@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-item" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                                <i class="bi bi-telephone contact-icon"></i>
+                                <h5>Phone</h5>
+                                <p>+91 9869404559</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-item" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+                                <i class="bi bi-geo-alt contact-icon"></i>
+                                <h5>Location</h5>
+                                <p>Dombivli, Maharashtra, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-5 text-center">
+                        <div class="col-12">
+                            <h5 class="mb-4">Connect with me</h5>
+                            <a href="https://www.linkedin.com/in/mihir-ughade-00601223a" target="_blank" class="social-icon" data-aos="flip-up" data-aos-delay="600" data-aos-duration="1000"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/mihir0804" target="_blank" class="social-icon" data-aos="flip-up" data-aos-delay="800" data-aos-duration="1000"><i class="bi bi-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2026 Mihir Milind Ughade. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+
+        // Optional: Add smooth scrolling for anchor links (already handled by Bootstrap ScrollSpy, but this is a backup)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start' // Align to the top of the element
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
