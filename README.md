@@ -1,4 +1,3 @@
-# Mihir_Portfolio_Website_Repository
 # Mihir Milind Ughade - Professional Portfolio
 
 This repository hosts the source code for my personal portfolio website, showcasing my skills and projects as a Data Analyst, Business Intelligence professional, and aspiring Data Scientist.
