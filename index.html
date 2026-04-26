@@ -3,39 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIHIR MILIND UGHADE | Analyst Portfolio</title>
+    <title>MIHIR MILIND UGHADE - Business & Data Analyst Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-color: #2563eb; --secondary-color: #1e40af; --accent-color: #f97316; --light-bg: #f8fafc; --dark-text: #0f172a; --light-text: #f1f5f9; }
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f97316;
+            --light-bg: #f8fafc;
+            --dark-text: #0f172a;
+            --light-text: #f1f5f9;
+            --transition-speed: 0.3s;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Open Sans', sans-serif; color: var(--dark-text); background-color: var(--light-bg); scroll-behavior: smooth; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
-        .hero { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--light-text); padding: 140px 0 80px 0; margin-top: 56px; }
-        .btn-custom { background-color: var(--accent-color); border-color: var(--accent-color); color: white; border-radius: 30px; transition: 0.3s; }
-        .btn-custom:hover { background-color: #ea580c; transform: translateY(-3px); color: white; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text);
+            padding: 160px 0 100px 0;
+            margin-top: 56px;
+            position: relative;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        
+        /* Stats Bar */
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-card h3 { color: var(--accent-color); margin-bottom: 5px; font-size: 2rem; }
+
+        /* Profile Image */
+        .profile-img-container {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 5px solid white;
+            margin: 0 auto;
+        }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Experience & Projects */
+        .section-padding { padding: 100px 0; }
         .section-title { position: relative; margin-bottom: 60px; text-align: center; color: var(--secondary-color); font-weight: 900; }
         .section-title::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--accent-color); }
-        .profile-img-container { width: 300px; height: 300px; border-radius: 20px; overflow: hidden; border: 5px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin: 0 auto; }
-        .profile-img { width: 100%; height: 100%; object-fit: cover; }
-        .stat-card { background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 20px; margin-top: 30px; backdrop-filter: blur(5px); }
-        .project-card { border: none; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; height: 100%; border-top: 4px solid var(--primary-color); }
-        .project-card:hover { transform: translateY(-10px); }
-        .experience-item { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        
+        .experience-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+        }
+        .project-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            background: #fff;
+            border-top: 4px solid var(--accent-color);
+        }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        
+        .btn-custom {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover { background-color: #ea580c; transform: translateY(-3px); color: white; }
+
+        footer { background-color: var(--dark-text); color: var(--light-text); padding: 40px 0; }
     </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbarNav">
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="70">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">MIHIR MILIND UGHADE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -44,57 +118,143 @@
     <section id="home" class="hero text-center">
         <div class="container">
             <h1 class="display-3 fw-bold mb-3" data-aos="fade-down">MIHIR MILIND UGHADE</h1>
-            <h2 class="lead mb-4" data-aos="fade-up">Business & Data Analyst | MBA in Data Science & AI</h2>
-            <div class="row justify-content-center g-3" data-aos="zoom-in" data-aos-delay="400">
-                <div class="col-md-3 col-6"><div class="stat-card"><h3>>99%</h3><p class="mb-0">NIDS Accuracy</p></div></div>
-                <div class="col-md-3 col-6"><div class="stat-card"><h3>12%</h3><p class="mb-0">ROI Increase</p></div></div>
-                <div class="col-md-3 col-6"><div class="stat-card"><h3>90%</h3><p class="mb-0">Error Reduction</p></div></div>
+            <h2 class="lead mb-4" data-aos="fade-up" data-aos-delay="200">Results-driven [Business, Data] Analyst | MBA in Data Science & AI</h2>
+            
+            <div class="row justify-content-center g-4 mt-2" data-aos="zoom-in" data-aos-delay="400">
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <h3>>99%</h3>
+                        <p class="mb-0">NIDS Threat Detection Accuracy</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <h3>12%</h3>
+                        <p class="mb-0">Increase in Portfolio ROI</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <h3>90%</h3>
+                        <p class="mb-0">Reduction in Manual Errors</p>
+                    </div>
+                </div>
             </div>
-            <div class="mt-5">
-                <a href="Mihir_Ughade_CV_Data_Analysis.pdf" target="_blank" class="btn btn-custom btn-lg">Download Updated CV</a>
+
+            <div class="mt-5" data-aos="fade-up" data-aos-delay="600">
+                <a href="#projects" class="btn btn-outline-light btn-lg me-3">View Portfolio</a>
+                <a href="Mihir_Ughade_CV_Data_Analysis.pdf" target="_blank" class="btn btn-custom btn-lg">Download CV</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="section-padding py-5">
+    <section id="about" class="section-padding">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">Professional Journey</h2>
             <div class="row align-items-center">
-                <div class="col-lg-5 text-center mb-4" data-aos="fade-right">
+                <div class="col-lg-5 text-center mb-5 mb-lg-0" data-aos="fade-right">
                     <div class="profile-img-container">
                         <img src="profile.jpg" alt="Mihir Milind Ughade" class="profile-img">
                     </div>
                 </div>
                 <div class="col-lg-7" data-aos="fade-left">
-                    <h3>Impact-Driven Analytics</h3>
-                    <p class="lead">Results-driven [Business, Data] Analyst turning complex data into actionable strategic insights[cite: 13]. Experienced in building automated dashboards and predictive models that elevate performance[cite: 14].</p>
+                    <h3 class="mb-4">Turning Data into Strategy</h3>
+                    <p class="mb-4">I focus on turning complex data into actionable strategic insights[cite: 13]. With a strong foundation in machine learning and process optimization, I build automated dashboards and predictive models that directly elevate operational performance[cite: 14, 16].</p>
                     
                     <div class="experience-item">
-                        <h5>Cybersecurity & Gen AI Intern</h5>
-                        <p class="text-muted">Edunet Foundation | Dec 2025 - Jan 2026</p>
-                        <p class="mb-0">Developed an AI-driven Network Intrusion Detection System achieving >99% accuracy in identifying real-time threats[cite: 22, 23].</p>
+                        <div class="d-flex justify-content-between">
+                            <h5>Cybersecurity with Gen AI Intern</h5>
+                            <span class="text-muted">Dec 2025 - Jan 2026</span>
+                        </div>
+                        <p class="mt-2 mb-0">Developed an AI-driven Network Intrusion Detection System (NIDS) using Random Forest, achieving >99% accuracy in real-time threat detection[cite: 22, 23].</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="d-flex justify-content-between">
+                            <h5>Market Research Intern | Earth5R</h5>
+                            <span class="text-muted">Aug 2025 - Nov 2025</span>
+                        </div>
+                        <p class="mt-2 mb-0">Improved online engagement by 35% through analytics-driven SEO and optimized multi-platform social strategy[cite: 18, 19, 21].</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="section-padding py-5 bg-light">
+    <section id="projects" class="section-padding bg-light">
         <div class="container">
-            <h2 class="section-title">Key Projects</h2>
+            <h2 class="section-title">Impactful Projects</h2>
             <div class="row g-4">
-                <div class="col-md-6"><div class="card project-card"><div class="card-body"><h5>Strategic Investment Insights</h5><p>Delivered actionable insights that increased portfolio ROI by 12% and reduced exposure to high-risk assets by 20%[cite: 38].</p></div></div></div>
-                <div class="col-md-6"><div class="card project-card"><div class="card-body"><h5>Logistics Performance Optimization</h5><p>Boosted on-time deliveries by 15% and cut delays by 10% through a custom Power BI deployment[cite: 40].</p></div></div></div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card project-card">
+                        <div class="card-body p-4 text-center">
+                            <i class="bi bi-graph-up-arrow mb-3 d-block" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                            <h5>Strategic Investment Insights</h5>
+                            <p class="text-muted">Tableau & Financial Modeling</p>
+                            <p>Analyzed 10,000+ records to boost portfolio ROI by 12% and reduce high-risk exposure by 20%[cite: 35, 37, 38].</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card project-card">
+                        <div class="card-body p-4 text-center">
+                            <i class="bi bi-truck mb-3 d-block" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                            <h5>Logistics Optimization</h5>
+                            <p class="text-muted">Power BI</p>
+                            <p>Optimized supply chain workflows, increasing on-time delivery rates by 15% across global regions[cite: 39, 40].</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card project-card">
+                        <div class="card-body p-4 text-center">
+                            <i class="bi bi-cash-stack mb-3 d-block" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                            <h5>Automated Payroll System</h5>
+                            <p class="text-muted">SQL & Database Management</p>
+                            <p>Engineered a dynamic MySQL system that reduced manual payroll calculation errors by 90%[cite: 42, 43, 44].</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-light py-4 text-center">
-        <p class="mb-0">&copy; 2026 MIHIR MILIND UGHADE. Dombivli, Maharashtra, India[cite: 7].</p>
+    <section id="resume" class="section-padding text-center">
+        <div class="container">
+            <h2 class="section-title">Full Resume</h2>
+            <p class="lead mb-5">Interested in a more detailed look at my technical stack and certifications?</p>
+            <a href="Mihir_Ughade_CV_Data_Analysis.pdf" target="_blank" class="btn btn-custom btn-lg">
+                <i class="bi bi-file-earmark-pdf me-2"></i> Download CV (PDF)
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding bg-dark text-light">
+        <div class="container text-center">
+            <h2 class="section-title text-light">Connect With Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p class="mb-4">Dombivli, Maharashtra, India [cite: 7]</p>
+                    <p class="mb-4">Email: <a href="mailto:mihirughade0804@gmail.com" class="text-light">mihirughade0804@gmail.com</a> [cite: 8]</p>
+                    <div class="mt-4">
+                        <a href="https://www.linkedin.com/in/mihir-ughade-00601223a" target="_blank" class="text-light me-4 fs-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/mihir0804" target="_blank" class="text-light fs-3"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Mihir Milind Ughade. Built with Data and Precision.</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
