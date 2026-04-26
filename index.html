@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIHIR MILIND UGHADE - Business & Data Analyst Portfolio</title>
+    <title>Mihir Milind Ughade - Data Scientist | Business Intelligence | Data Analyst Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #f97316;
+            --primary-color: #2563eb; /* Blue */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --accent-color: #f97316; /* Orange */
             --light-bg: #f8fafc;
             --dark-text: #0f172a;
             --light-text: #f1f5f9;
@@ -22,77 +22,44 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Open Sans', sans-serif; color: var(--dark-text); background-color: var(--light-bg); scroll-behavior: smooth; overflow-x: hidden; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        .navbar-brand, .nav-link, .btn { font-weight: 600; font-family: 'Montserrat', sans-serif; }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--light-text);
-            padding: 160px 0 100px 0;
-            margin-top: 56px;
-            position: relative;
-        }
-        .hero h1 { font-size: 3.5rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        
-        /* Stats Bar */
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
-        }
-        .stat-card:hover { transform: translateY(-5px); }
-        .stat-card h3 { color: var(--accent-color); margin-bottom: 5px; font-size: 2rem; }
+        .hero { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--light-text); padding: 150px 0 100px 0; margin-top: 56px; position: relative; overflow: hidden; }
+        .hero::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%); transform: rotate(30deg); z-index: 0; }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); animation: fadeInDown 1s ease-out; }
 
-        /* Profile Image */
-        .profile-img-container {
-            width: 300px;
-            height: 300px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border: 5px solid white;
-            margin: 0 auto;
-        }
-        .profile-img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* Experience & Projects */
-        .section-padding { padding: 100px 0; }
-        .section-title { position: relative; margin-bottom: 60px; text-align: center; color: var(--secondary-color); font-weight: 900; }
-        .section-title::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--accent-color); }
-        
-        .experience-item {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 25px;
-            border-left: 5px solid var(--primary-color);
-        }
-        .project-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            height: 100%;
-            background: #fff;
-            border-top: 4px solid var(--accent-color);
-        }
-        .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        
-        .btn-custom {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            color: white;
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
+        .btn-custom { background-color: var(--accent-color); border-color: var(--accent-color); color: white; padding: 12px 25px; border-radius: 30px; transition: all var(--transition-speed) ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .btn-custom:hover { background-color: #ea580c; transform: translateY(-3px); color: white; }
+        .btn-outline-custom { border-color: white; color: white; padding: 12px 25px; border-radius: 30px; transition: all var(--transition-speed) ease; }
+        .btn-outline-custom:hover { background-color: rgba(255, 255, 255, 0.1); color: white; transform: translateY(-3px); }
 
-        footer { background-color: var(--dark-text); color: var(--light-text); padding: 40px 0; }
+        .section-padding { padding: 100px 0; }
+        .section-title { position: relative; margin-bottom: 60px; font-weight: 900; text-align: center; color: var(--secondary-color); }
+        .section-title::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--accent-color); border-radius: 2px; }
+
+        .profile-img-container { width: 300px; height: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 5px solid white; animation: float 6s ease-in-out infinite; }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .profile-img-container:hover .profile-img { transform: scale(1.05); }
+
+        .experience-item { background-color: #ffffff; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s ease; }
+        .experience-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .experience-item h5 { color: var(--accent-color); }
+
+        .project-card { border: none; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s ease; height: 100%; background: #fff; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .project-1 { border-top: 4px solid #3b82f6; } .project-2 { border-top: 4px solid #10b981; } .project-3 { border-top: 4px solid #8b5cf6; } 
+        .project-4 { border-top: 4px solid #ec4899; } .project-5 { border-top: 4px solid #f59e0b; } .project-6 { border-top: 4px solid #ef4444; }
+        .project-7 { border-top: 4px solid #06b6d4; } .project-8 { border-top: 4px solid #84cc16; }
+
+        .skill-icon { font-size: 3rem; color: var(--primary-color); transition: 0.3s ease; }
+        .skill-item:hover .skill-icon { color: var(--accent-color); transform: scale(1.2); }
+        .contact-icon { font-size: 2rem; color: var(--primary-color); margin-bottom: 15px; }
+        .social-icon { font-size: 1.8rem; color: var(--dark-text); margin: 0 15px; transition: 0.3s ease; }
+        .social-icon:hover { color: var(--accent-color); transform: translateY(-3px); }
+        footer { background-color: var(--dark-text); color: var(--light-text); padding: 30px 0; }
+
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="70">
@@ -108,6 +75,7 @@
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -116,65 +84,50 @@
     </nav>
 
     <section id="home" class="hero text-center">
-        <div class="container">
+        <div class="container hero-content">
             <h1 class="display-3 fw-bold mb-3" data-aos="fade-down">MIHIR MILIND UGHADE</h1>
-            <h2 class="lead mb-4" data-aos="fade-up" data-aos-delay="200">Results-driven [Business, Data] Analyst | MBA in Data Science & AI</h2>
-            
-            <div class="row justify-content-center g-4 mt-2" data-aos="zoom-in" data-aos-delay="400">
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <h3>>99%</h3>
-                        <p class="mb-0">NIDS Threat Detection Accuracy</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <h3>12%</h3>
-                        <p class="mb-0">Increase in Portfolio ROI</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <h3>90%</h3>
-                        <p class="mb-0">Reduction in Manual Errors</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-5" data-aos="fade-up" data-aos-delay="600">
-                <a href="#projects" class="btn btn-outline-light btn-lg me-3">View Portfolio</a>
-                <a href="Mihir_Ughade_CV_Data_Analysis.pdf" target="_blank" class="btn btn-custom btn-lg">Download CV</a>
+            <h2 class="lead mb-4" data-aos="fade-up">Data Scientist | Business Intelligence | Data Analyst</h2>
+            <p class="mb-5" data-aos="fade-up">Transforming Complex Data into Strategic Insights for Innovation & Growth</p>
+            <div data-aos="fade-up">
+                <a href="#projects" class="btn btn-custom btn-lg me-3">Explore My Work</a>
+                <a href="Mihir_Ughade_CV_Data_Analysis.pdf" target="_blank" class="btn btn-outline-custom btn-lg">Download CV</a>
             </div>
         </div>
     </section>
 
     <section id="about" class="section-padding">
         <div class="container">
-            <h2 class="section-title">Professional Journey</h2>
+            <h2 class="section-title">About Me</h2>
             <div class="row align-items-center">
-                <div class="col-lg-5 text-center mb-5 mb-lg-0" data-aos="fade-right">
+                <div class="col-lg-5 text-center mb-5" data-aos="fade-right">
                     <div class="profile-img-container">
                         <img src="profile.jpg" alt="Mihir Milind Ughade" class="profile-img">
                     </div>
                 </div>
                 <div class="col-lg-7" data-aos="fade-left">
-                    <h3 class="mb-4">Turning Data into Strategy</h3>
-                    <p class="mb-4">I focus on turning complex data into actionable strategic insights[cite: 13]. With a strong foundation in machine learning and process optimization, I build automated dashboards and predictive models that directly elevate operational performance[cite: 14, 16].</p>
+                    <h3 class="mb-4">My Journey in Data</h3>
+                    <p class="mb-4">I'm a results-driven Data Professional skilled in SQL, Excel, Power BI, and Python. My expertise spans data analysis, predictive modeling, and process optimization, consistently supporting strategic business decisions.</p>
                     
+                    <h4 class="mt-5 mb-4">Professional Experience</h4>
                     <div class="experience-item">
-                        <div class="d-flex justify-content-between">
-                            <h5>Cybersecurity with Gen AI Intern</h5>
-                            <span class="text-muted">Dec 2025 - Jan 2026</span>
-                        </div>
-                        <p class="mt-2 mb-0">Developed an AI-driven Network Intrusion Detection System (NIDS) using Random Forest, achieving >99% accuracy in real-time threat detection[cite: 22, 23].</p>
+                        <h5>Earth5R – Market Research Intern</h5>
+                        <p class="text-muted mb-2"><strong>Aug 2025 – Nov 2025</strong></p>
+                        <ul>
+                            <li>Designed and executed digital marketing campaigns, improving online engagement by 35% through analytics-driven SEO[cite: 19].</li>
+                            <li>Conducted market research and competitor analysis to identify high-value partnerships for growth strategy[cite: 20].</li>
+                            <li>Refined content strategy on social media, boosting interaction rates by 25%[cite: 21].</li>
+                        </ul>
                     </div>
 
                     <div class="experience-item">
-                        <div class="d-flex justify-content-between">
-                            <h5>Market Research Intern | Earth5R</h5>
-                            <span class="text-muted">Aug 2025 - Nov 2025</span>
-                        </div>
-                        <p class="mt-2 mb-0">Improved online engagement by 35% through analytics-driven SEO and optimized multi-platform social strategy[cite: 18, 19, 21].</p>
+                        <h5>Edunet Foundation & AICTE – Cybersecurity with Gen AI Intern</h5>
+                        <p class="text-muted mb-2"><strong>Dec 2025 – Jan 2026</strong></p>
+                        <ul>
+                            <li>Developed an AI-driven NIDS using Random Forest, achieving >99% accuracy in real-time threat detection[cite: 23].</li>
+                            <li>Deployed a low-latency Streamlit dashboard for live packet inspection and feature analysis[cite: 24].</li>
+                            <li>Built 'CyberLogger,' a Python application implementing Base64 encryption for secure data study[cite: 25].</li>
+                            <li>Conducted vulnerability assessments utilizing Wireshark and the BeEF Framework[cite: 26].</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -183,78 +136,42 @@
 
     <section id="projects" class="section-padding bg-light">
         <div class="container">
-            <h2 class="section-title">Impactful Projects</h2>
+            <h2 class="section-title">Projects</h2>
             <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="card project-card">
-                        <div class="card-body p-4 text-center">
-                            <i class="bi bi-graph-up-arrow mb-3 d-block" style="font-size: 2.5rem; color: var(--primary-color);"></i>
-                            <h5>Strategic Investment Insights</h5>
-                            <p class="text-muted">Tableau & Financial Modeling</p>
-                            <p>Analyzed 10,000+ records to boost portfolio ROI by 12% and reduce high-risk exposure by 20%[cite: 35, 37, 38].</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card project-card">
-                        <div class="card-body p-4 text-center">
-                            <i class="bi bi-truck mb-3 d-block" style="font-size: 2.5rem; color: var(--primary-color);"></i>
-                            <h5>Logistics Optimization</h5>
-                            <p class="text-muted">Power BI</p>
-                            <p>Optimized supply chain workflows, increasing on-time delivery rates by 15% across global regions[cite: 39, 40].</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card project-card">
-                        <div class="card-body p-4 text-center">
-                            <i class="bi bi-cash-stack mb-3 d-block" style="font-size: 2.5rem; color: var(--primary-color);"></i>
-                            <h5>Automated Payroll System</h5>
-                            <p class="text-muted">SQL & Database Management</p>
-                            <p>Engineered a dynamic MySQL system that reduced manual payroll calculation errors by 90%[cite: 42, 43, 44].</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-md-6 col-lg-4"><div class="card project-card project-1"><div class="card-body"><h5>Predictive Supply Chain Analytics</h5><p>Python, ML. Boosted forecast accuracy by 18%[cite: 48].</p><a href="https://github.com/mihir0804/Predictive_Supply_Chain_Analytics" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="card project-card project-2"><div class="card-body"><h5>Customer Churn Prediction</h5><p>Python, SQL, ML. Improved customer loyalty by 10%[cite: 52].</p><a href="https://github.com/mihir0804/Customer_Churn_Prediction_ML" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="card project-card project-3"><div class="card-body"><h5>Vision Heaven – SQL Project</h5><p>MySQL. Optimized queries by 25%[cite: 54].</p><a href="https://github.com/mihir0804/Vision_Heaven_SQL_Project" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="card project-card project-4"><div class="card-body"><h5>Automated Payroll System</h5><p>SQL. Reduced manual errors by 90%[cite: 44].</p><a href="https://github.com/mihir0804/Automated-Payroll-Management-System" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="card project-card project-5"><div class="card-body"><h5>AI-Powered Resume Screening</h5><p>NLP, ML. Reducing manual screening time by 40%.</p><a href="https://github.com/mihir0804/AI_Resume_Screening_NLP" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="card project-card project-6"><div class="card-body"><h5>Self-Healing MLOps Pipeline</h5><p>MLOps. Reduced model downtime by 35%.</p><a href="https://github.com/mihir0804/Self_Healing_MlOps_Drift_Detection" target="_blank" class="btn btn-sm btn-outline-primary mt-3">GitHub</a></div></div></div>
             </div>
         </div>
     </section>
 
-    <section id="resume" class="section-padding text-center">
-        <div class="container">
-            <h2 class="section-title">Full Resume</h2>
-            <p class="lead mb-5">Interested in a more detailed look at my technical stack and certifications?</p>
-            <a href="Mihir_Ughade_CV_Data_Analysis.pdf" target="_blank" class="btn btn-custom btn-lg">
-                <i class="bi bi-file-earmark-pdf me-2"></i> Download CV (PDF)
-            </a>
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding bg-dark text-light">
+    <section id="skills" class="section-padding">
         <div class="container text-center">
-            <h2 class="section-title text-light">Connect With Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <p class="mb-4">Dombivli, Maharashtra, India [cite: 7]</p>
-                    <p class="mb-4">Email: <a href="mailto:mihirughade0804@gmail.com" class="text-light">mihirughade0804@gmail.com</a> [cite: 8]</p>
-                    <div class="mt-4">
-                        <a href="https://www.linkedin.com/in/mihir-ughade-00601223a" target="_blank" class="text-light me-4 fs-3"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://github.com/mihir0804" target="_blank" class="text-light fs-3"><i class="bi bi-github"></i></a>
-                    </div>
-                </div>
+            <h2 class="section-title">Skills</h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-6 skill-item"><i class="bi bi-code-slash skill-icon"></i><h5>Programming</h5><p>Python</p></div>
+                <div class="col-md-3 col-6 skill-item"><i class="bi bi-server skill-icon"></i><h5>Databases</h5><p>MySQL, PostgreSQL</p></div>
+                <div class="col-md-3 col-6 skill-item"><i class="bi bi-bar-chart skill-icon"></i><h5>Visualization</h5><p>Power BI, Tableau</p></div>
+                <div class="col-md-3 col-6 skill-item"><i class="bi bi-robot skill-icon"></i><h5>ML & AI Tools</h5><p>Scikit-learn, TensorFlow</p></div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center">
+    <footer class="bg-dark text-light text-center py-4">
         <div class="container">
-            <p class="mb-0">&copy; 2026 Mihir Milind Ughade. Built with Data and Precision.</p>
+            <div id="contact" class="mb-3">
+                <a href="https://www.linkedin.com/in/mihir-ughade-00601223a" target="_blank" class="social-icon text-light"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/mihir0804" target="_blank" class="social-icon text-light"><i class="bi bi-github"></i></a>
+            </div>
+            <p>&copy; 2026 Mihir Milind Ughade. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
